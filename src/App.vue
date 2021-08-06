@@ -2,39 +2,78 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="white"
     >
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <v-btn
+         href="https://trswnca.top/coj"
+         text
+         >
+          <span class="mr-2">COJ</span>
+        </v-btn>
       </div>
 
-      <v-spacer></v-spacer>
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">首页</span>
+        </v-btn>
+      </div>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">题库</span>
+        </v-btn>
+      </div>
+
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">比赛</span>
+        </v-btn>
+      </div>
+
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">训练</span>
+        </v-btn>
+      </div>
+
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">评测</span>
+        </v-btn>
+      </div>
+
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2">用户</span>
+        </v-btn>
+      </div>
+
+      <v-spacer />
+
+      <div class="d-flex align-center">
+        <v-btn
+         text
+         >
+          <span class="mr-2"> username </span>
+          <v-icon> {{ downcrop }} </v-icon>
+        </v-btn>
+      </div>
+      
+
+
     </v-app-bar>
 
     <v-main>
@@ -45,10 +84,13 @@
 
 <script>
 
+import { mdiChevronDown } from '@mdi/js';
+
 export default {
   name: 'App',
 
   data: () => ({
+    downcrop: mdiChevronDown
     //
   }),
 };
