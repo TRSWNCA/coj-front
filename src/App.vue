@@ -17,7 +17,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">首页</span>
+         <v-icon> {{ homeIcon }} </v-icon>
+          <span class="mr-2">Home</span>
         </v-btn>
       </div>
 
@@ -25,7 +26,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">题库</span>
+         <v-icon> {{ problemIcon }} </v-icon>
+          <span class="mr-2">Problemset</span>
         </v-btn>
       </div>
 
@@ -33,7 +35,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">比赛</span>
+         <v-icon> {{ contestIcon }} </v-icon>
+          <span class="mr-2">Contest</span>
         </v-btn>
       </div>
 
@@ -41,7 +44,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">训练</span>
+         <v-icon> {{ trainIcon }} </v-icon>
+          <span class="mr-2">Train</span>
         </v-btn>
       </div>
 
@@ -49,7 +53,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">评测</span>
+          <v-icon> {{ statusIcon }} </v-icon>
+          <span class="mr-2">Status</span>
         </v-btn>
       </div>
 
@@ -57,7 +62,8 @@
         <v-btn
          text
          >
-          <span class="mr-2">用户</span>
+          <v-icon> {{ accountIcon }} </v-icon>
+          <span class="mr-2">Users</span>
         </v-btn>
       </div>
 
@@ -68,7 +74,7 @@
          text
          >
           <span class="mr-2"> username </span>
-          <v-icon> {{ downcrop }} </v-icon>
+          <v-icon> {{ downcropIcon }} </v-icon>
         </v-btn>
       </div>
       
@@ -84,13 +90,22 @@
 
 <script>
 
-import { mdiChevronDown } from '@mdi/js';
+// find icons here: https://material.iconhelper.cn/ 
+import { mdiChevronDown, mdiDumbbell, mdiHistory } from '@mdi/js';
+import { mdiAccount, mdiHome, mdiFormatListBulletedSquare, mdiCalendarCheck} from '@mdi/js'
 
 export default {
   name: 'App',
 
   data: () => ({
-    downcrop: mdiChevronDown
+    downcropIcon: mdiChevronDown,
+    accountIcon:  mdiAccount,
+    homeIcon: mdiHome,
+    problemIcon: mdiFormatListBulletedSquare,
+    contestIcon: mdiCalendarCheck,
+    trainIcon: mdiDumbbell,
+    statusIcon: mdiHistory,
+
     //
   }),
 };
