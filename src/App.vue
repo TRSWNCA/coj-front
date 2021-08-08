@@ -3,6 +3,7 @@
     <v-app-bar
       app
       color="white"
+      dense
     >
       <div class="d-flex align-center">
         <v-btn
