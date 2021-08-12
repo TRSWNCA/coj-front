@@ -69,18 +69,36 @@
       </div>
 
       <v-spacer />
-
-      <div class="d-flex align-center">
+      
+      <div class="text-center">
+    <v-menu
+      open-on-hover
+      top
+      offset-y
+    >
+      <template v-slot:activator="{ on, attrs }">
         <v-btn
-         text
-         >
+          text
+          v-bind="attrs"
+          v-on="on"
+        >
           <span class="mr-2"> username </span>
           <v-icon> {{ downcropIcon }} </v-icon>
         </v-btn>
-      </div>
+      </template>
+
+      <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+          @click="item.method"
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+  </div>
       
-
-
     </v-app-bar>
 
     <v-main>
@@ -106,8 +124,17 @@ export default {
     contestIcon: mdiCalendarCheck,
     trainIcon: mdiDumbbell,
     statusIcon: mdiHistory,
-
-    //
+    items: [
+      { title: "My Profile", method: () => {
+        console.log("My Profile")
+      }},
+      { title: "My Submissions", method: () => {
+        routeTo("/submissions?user={{ username }}")
+      }},
+      { title: "Logout", method: () => {
+        console.log("Logout")
+      }},
+    ]
   }),
 };
 </script>
